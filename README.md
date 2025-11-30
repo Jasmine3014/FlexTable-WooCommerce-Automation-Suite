@@ -44,10 +44,9 @@ git clone https://github.com/Jasmine3014/FlexTable-WooCommerce-Automation-Suite.
   - Create a .env file in the root folder:
   
 ```console 
-# WordPress Admin
-WP_ADMIN_URL=
-WP_USER=
-WP_PASS=
+WP_URL=
+WP_USERNAME=
+WP_PASSWORD=
 
 ```
 4. Run the tests:
