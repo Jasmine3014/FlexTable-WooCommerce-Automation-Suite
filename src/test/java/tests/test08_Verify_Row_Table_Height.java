@@ -5,10 +5,10 @@ import org.testng.annotations.Test;
 import pages.*;
 import utils.BaseTest;
 
-public class test06_LayoutOption_TitleAndDescription extends BaseTest {
+public class test08_Verify_Row_Table_Height extends BaseTest {
 
     @Test
-    public void LayoutOption_TitleAndDescription() {
+    public void Verify_Row_Table_Height() {
         Login_Page loginPage = new Login_Page(page);
         loginPage.loginWithValidCredential(USERNAME, PASSWORD);
 
@@ -18,19 +18,17 @@ public class test06_LayoutOption_TitleAndDescription extends BaseTest {
         VerifyTitleDescLayout verifyTitleDescLayout = new VerifyTitleDescLayout(page);
         verifyTitleDescLayout.clickEditTableBtn();
         verifyTitleDescLayout.clickTablecustom();
-        verifyTitleDescLayout.enableTitle_Des();
-        verifyFlexTablePage.navigateToFlexTableDashboard();
+
+        VerifyRowAndTableHeight verify = new VerifyRowAndTableHeight(page);
+        verify.clickOnStylingBtn();
+        verify.selectRowsPerPage5();
+        verify.selectTableHeight();
+        verify.setSaveChangesBtn();
 
         FlexShortCutPage flex = new FlexShortCutPage(page);
         flex.clickPages();
-
         verifyTitleDescLayout.clickViewBtn();
-        Assert.assertTrue(
-                verifyTitleDescLayout.isTableNameContains("Test table"), "Table name does NOT contain 'test'"
-        );
-        Assert.assertTrue(
-                verifyTitleDescLayout.isDescriptionContains("Test data"), "Table Description name does NOT contain"
-        );
-    }
-    }
 
+        Assert.assertTrue(verify.isFrontendRowsFive(), "Frontend rows is not 5");
+    }
+}

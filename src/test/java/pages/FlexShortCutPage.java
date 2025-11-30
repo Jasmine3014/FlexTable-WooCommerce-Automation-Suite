@@ -50,6 +50,7 @@ public class FlexShortCutPage {
         pageTitle.fill("Test Table");
         pageInput.click();
         pageInput.type(shortcode);
+
     }
 
     public void publishPage() {
