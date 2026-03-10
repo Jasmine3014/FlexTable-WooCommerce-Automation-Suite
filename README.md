@@ -58,7 +58,9 @@ WP_PASSWORD=
 ### **Test Cases**
 
 🅰️ Part A — FlexTable: Automation Test Cases
+
 1️⃣ Test Case 1: Verify WordPress Login Functionality
+
 Objective: Ensure the user can successfully log in to the WordPress Admin Panel.
 
 Steps:
